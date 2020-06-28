@@ -117,6 +117,17 @@ is-stream@^2.0.0:
   resolved "https://registry.yarnpkg.com/is-stream/-/is-stream-2.0.0.tgz#bde9c32680d6fae04129d6ac9d921ce7815f78e3"
   integrity sha512-XCoy+WlUr7d1+Z8GgSuXmpuUFC9fOhRXglJMx+dwLKTkL44Cjd4W1Z5P+BQZpr+cR93aGP4S/s7Ftw6Nd/kiEw==
 
+konmai@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/konmai/-/konmai-0.0.1.tgz#5125835a9c48de2922c19ea44dba0ca4cbd725f5"
+  integrity sha512-xpSYk6pS/F1CQjqABGvncfegOj8TN+RNufwUIaAX0VZSWZxunUaCBWekLG7YTQpGk4IGstqUhtJFHjxBinmpSw==
+  dependencies:
+    "@types/tough-cookie" "^4.0.0"
+    axios "^0.19.2"
+    axios-cookiejar-support "^1.0.0"
+    hasha "^5.2.0"
+    tough-cookie "^4.0.0"
+
 lines-and-columns@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"

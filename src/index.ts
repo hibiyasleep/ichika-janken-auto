@@ -1,5 +1,5 @@
-import { getAxiosInstance } from './axios';
-import login from './login';
+import { getAxiosInstance } from 'konmai/lib/axios';
+import login from 'konmai/lib/login';
 
 async function doIchikaJanken() {
     const jar = await login({
