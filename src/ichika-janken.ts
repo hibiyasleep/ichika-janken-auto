@@ -1,6 +1,8 @@
 import { getAxiosInstance } from 'konmai/lib/axios';
 import login from 'konmai/lib/login';
 
+import { pick, retryUntilSuccess } from './misc';
+
 async function doIchikaJanken() {
     const jar = await retryUntilSuccess(() => login({
         id: process.env.E_AMUSEMENT_ID!,
@@ -28,19 +30,3 @@ doIchikaJanken().catch(err => {
     console.error(err);
     process.exit(1);
 });
-
-function pick<T>(array: T[]): T {
-    return array[Math.floor(Math.random() * array.length)];
-}
-
-async function retryUntilSuccess<T>(fn: () => Promise<T>, retryCount: number = 3): Promise<T> {
-    let _err: Error;
-    for (let i = 0; i < retryCount; ++i) {
-        try {
-            return await fn();
-        } catch (err) {
-            _err = err;
-        }
-    }
-    throw _err!;
-}

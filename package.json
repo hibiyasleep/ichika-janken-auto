@@ -6,7 +6,8 @@
   "author": "JongChan Choi <jong@chan.moe>",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "sucrase-node src/index.ts"
+    "start:ichika-janken": "sucrase-node src/ichika-janken.ts",
+    "start:nono-rush": "sucrase-node src/nono-rush.ts"
   },
   "dependencies": {
     "@types/node": "^14.0.13",
