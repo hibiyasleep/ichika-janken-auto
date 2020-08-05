@@ -2,10 +2,10 @@ import { getAxiosInstance } from 'konmai/lib/axios';
 import login from 'konmai/lib/login';
 
 async function doIchikaJanken() {
-    const jar = await login({
+    const jar = await retryUntilSuccess(() => login({
         id: process.env.E_AMUSEMENT_ID!,
         pw: process.env.E_AMUSEMENT_PW!,
-    });
+    }));
     const axios = getAxiosInstance({
         baseURL: 'https://p.eagate.573.jp/',
         jar,
@@ -31,4 +31,16 @@ doIchikaJanken().catch(err => {
 
 function pick<T>(array: T[]): T {
     return array[Math.floor(Math.random() * array.length)];
+}
+
+async function retryUntilSuccess<T>(fn: () => Promise<T>, retryCount: number = 3): Promise<T> {
+    let _err: Error;
+    for (let i = 0; i < retryCount; ++i) {
+        try {
+            return await fn();
+        } catch (err) {
+            _err = err;
+        }
+    }
+    throw _err!;
 }
