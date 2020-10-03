@@ -2,7 +2,7 @@ name: nono rush
 
 on:
   schedule:
-    - cron: '5 6 * * *'
+    - cron: '11 6 * * *'
 
 env:
   E_AMUSEMENT_ID: ${{ secrets.E_AMUSEMENT_ID }}
